@@ -8,6 +8,7 @@ class Spacecraft:
             self.position = (self.position[0] + 1, self.position[1], self.position[2])
         elif command == 'b':
             self.position = (self.position[0] - 1, self.position[1], self.position[2])
+
     def rotate(self, command):
         directions = ['N', 'E', 'S', 'W']
         current_index = directions.index(self.direction)
@@ -16,10 +17,20 @@ class Spacecraft:
         elif command == 'r':
             new_index = (current_index + 1) % 4
         self.direction = directions[new_index]
+
     def turn(self, command):
         if command == 'u':
             self.direction = 'Up'
         elif command == 'd':
             self.direction = 'Down'
+            
+    def execute_commands(self, commands):
+        for command in commands:
+            if command in ['f', 'b']:
+                self.move(command)
+            elif command in ['l', 'r']:
+                self.rotate(command)
+            elif command in ['u', 'd']:
+                self.turn(command)
 
     
