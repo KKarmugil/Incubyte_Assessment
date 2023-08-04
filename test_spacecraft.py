@@ -15,3 +15,13 @@ def test_spacecraft_move_backward():
     spacecraft = Spacecraft((1, 0, 0), 'N')
     spacecraft.move('b')
     assert spacecraft.position == (0, 0, 0)
+    
+def test_spacecraft_rotate_left():
+    spacecraft = Spacecraft((0, 0, 0), 'N')
+    spacecraft.rotate('l')
+    assert spacecraft.direction == 'W'
+
+def test_spacecraft_rotate_right():
+    spacecraft = Spacecraft((0, 0, 0), 'N')
+    spacecraft.rotate('r')
+    assert spacecraft.direction == 'E'
