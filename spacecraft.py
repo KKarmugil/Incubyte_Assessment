@@ -16,3 +16,10 @@ class Spacecraft:
         elif command == 'r':
             new_index = (current_index + 1) % 4
         self.direction = directions[new_index]
+    def turn(self, command):
+        if command == 'u':
+            self.direction = 'Up'
+        elif command == 'd':
+            self.direction = 'Down'
+
+    
