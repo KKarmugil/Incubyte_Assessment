@@ -36,13 +36,6 @@ def test_spacecraft_turn_down():
     spacecraft.turn('d')
     assert spacecraft.direction == 'Down'
 
-def test_execute_commands(self):
-    craft = Spacecraft(0, 0, 0, "N")
-    commands = ["f", "r", "u", "b", "l"]
-    final_position, final_direction = craft.execute_commands(commands)
-    self.assertEqual(final_position, [1, 0, -1])
-    self.assertEqual(final_direction, "N")
-
 def test_spacecraft_execute_commands():
     spacecraft = Spacecraft((0, 0, 0), 'N')
     spacecraft.execute_commands(["f", "r", "u", "b", "l"])
